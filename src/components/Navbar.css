@@ -1,0 +1,30 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem; /* Add margin between links */
+}
+
+.logout {
+    margin-left: 10px; /* Push the Logout link to the right */
+}
