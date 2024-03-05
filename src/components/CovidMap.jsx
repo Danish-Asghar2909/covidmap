@@ -26,7 +26,7 @@ const CovidMap = () => {
     };
 
     fetchData();
-  });
+  }, [covidData]);
 
   return (
     <div style={{ height: '100vh' }}>

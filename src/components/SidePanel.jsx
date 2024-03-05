@@ -10,6 +10,7 @@ function SidePanel() {
   const [selectedRegion, setSelectedRegion] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedType, setSelectedType] = useState('');
+  const [ selectedCountry , setSelectedCountry ] = useState('');
 
   function formatNumber(number) {
     const suffixes = ['', 'K', 'M', 'B'];
@@ -21,12 +22,13 @@ function SidePanel() {
 
   const filterDataForChart = (region) => {
     const selectedDetails = contriesDetails.find((item) => item.country === region);
-    const { infected, deceased, tested } = selectedDetails;
+    const { infected, deceased, tested , country} = selectedDetails;
     const newData = [
       { id: 0, value: infected, label: 'Infected' },
       { id: 1, value: deceased, label: 'Deceased' },
       { id: 2, value: tested, label: 'Tested' },
     ];
+    setSelectedCountry(country)
     setChartData(newData);
   };
 
@@ -95,6 +97,7 @@ function SidePanel() {
       <Button variant="contained" color="primary" onClick={handleFilterButtonClick}>
         Filter
       </Button>
+      <h3>{selectedCountry}</h3>
       <Grid container spacing={3} style={{ marginTop: '20px' }}>
         <Grid item xs={4}>
           <Card>
