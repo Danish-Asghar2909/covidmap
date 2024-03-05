@@ -1,13 +1,11 @@
-// components/SidePanel.js
 import React, { useState } from 'react';
 import { Paper, Typography, FormControl, InputLabel, Select, MenuItem, Button, Grid, Card, CardContent } from '@material-ui/core';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { PieChart } from '@mui/x-charts/PieChart';
 
 function SidePanel() {
   const countries = useSelector((state) => state.filter.allRegion);
   const contriesDetails = useSelector((state) => state.filter.countriesDetails);
-  const dispatch = useDispatch();
   const [chartData, setChartData] = useState(null);
   const [selectedRegion, setSelectedRegion] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('');

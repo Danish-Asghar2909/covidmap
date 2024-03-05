@@ -1,8 +1,7 @@
-// CovidMap.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MapComponent from './MapComponent';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setAllRegion , setCountriesDetails} from './redux/filterSlice'
 
 const CovidMap = () => {
@@ -27,7 +26,7 @@ const CovidMap = () => {
     };
 
     fetchData();
-  }, []);
+  });
 
   return (
     <div style={{ height: '100vh' }}>
